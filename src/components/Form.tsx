@@ -10,10 +10,12 @@ import credito from '@/assets/credito.png'
 import { useState } from "react";
 import Content from "./Content";
 import axios from "axios";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 
 const Form = () => {
+
+    const router = useRouter()
 
     const { register, handleSubmit } = useForm();
     const [selected, setSelected] = useState('debito')
@@ -45,7 +47,7 @@ const Form = () => {
             numero: parseInt(data.numero)
         });
 
-        redirect('/confirmed');
+        router.push('/confirmed');
 
 
        } catch (error) {

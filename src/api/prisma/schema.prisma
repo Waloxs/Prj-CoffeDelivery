@@ -27,5 +27,5 @@ model Address {
   cidade     String
   uf         String
   numero     Int
-  user       User?    @relation
+  user       User?    
 }

@@ -18,6 +18,8 @@ export const createUser = async (req: Request, res: Response): Promise<Response>
         telefone,
     } = req.body;
 
+    console.log(req.body);
+
     try {
         if (!name || !email || !password || !lastName || !telefone) {
             return res.status(400).json({ error: 'Campos ausentes' });
@@ -67,6 +69,20 @@ export const addAddressToUser = async (req: Request, res: Response): Promise<Res
     addressData.numero = parseFloat(addressData.numero)
 
     try {
+
+        const user = await prisma.user.findUnique({
+            where: { id: userId },
+            include: { address: true },
+        });
+
+        if (!user) {
+            return res.status(404).json({ error: 'Usuário não encontrado' });
+        }
+
+        if (user.address) {
+            return res.status(400).json({ error: 'Usuário já possui um endereço' });
+        }
+
         const address = await prisma.address.create({
             data: addressData
         });
@@ -75,7 +91,7 @@ export const addAddressToUser = async (req: Request, res: Response): Promise<Res
             where: { id: userId },
             data: {
                 address: {
-                    connect: { id: address.id }  //// -> aqui diaanho conecta o id do user com o id do adress.
+                    connect: { id: address.id } 
                 }
             }
         });
@@ -122,7 +138,7 @@ export const loginUser = async (req: Request, res: Response): Promise<any> => {
             { expiresIn: '1d' }
         );
 
-        res.status(200).json({ message: 'Bem-vindo', token });
+        res.status(200).json({ message: 'Bem-vindo', token, user });
     } catch (error) {
         console.error(error); 
         res.status(500).json({ error: 'Erro no login' });

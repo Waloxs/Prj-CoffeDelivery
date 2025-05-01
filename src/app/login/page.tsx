@@ -30,17 +30,16 @@ export const Page = () => {
 
     const onSubmit = async (data: any) => {
         try {
-            const response = await axios.put<Login>('http://localhost:3000/api/users', {
+            const response = await axios.post<Login>('http://localhost:3000/api/login', {
                 email: data.email,
                 password: data.senha
             });
-
             
-           if (response.status === 201){  
+           if (response.status === 200){  
                 setPasswordValided(true);
-    
                 const token = response.data.token;
                 localStorage.setItem('token', token);
+                localStorage.setItem('id',((response.data as any).user.id));
                 router.push('/checkout');
             }
         }
