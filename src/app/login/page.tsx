@@ -6,12 +6,11 @@ import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 import { useState } from 'react';
 import axios from 'axios'
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import Cadastro from '../../components/Cadastro';
 
 
-export const Page = () => {
+export default function Page() {
 
     const router = useRouter();
 
@@ -121,5 +120,3 @@ export const Page = () => {
         </div>
     )
 }
-
-export default Page;
