@@ -7,8 +7,6 @@ import { FaEye } from "react-icons/fa";
 import { useState } from 'react';
 import axios from 'axios'
 import { useRouter } from 'next/navigation';
-import BASE_URL from '@/api/server';
-
 export const Page = () => {
 
     const router = useRouter();
@@ -24,7 +22,7 @@ export const Page = () => {
 
     const onSubmit = async (data: any) => {
         try {
-            const response = await axios.post(`${BASE_URL}/users`, {
+            const response = await axios.post('https://prj-coffedelivery.onrender.com/api/users', {
                 email: data.email,
                 password: data.senha,
                 name: data.nome,
