@@ -11,6 +11,7 @@ import { useState } from "react";
 import Content from "./Content";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import BASE_URL from "@/api/server";
 
 
 const Form = () => {
@@ -37,7 +38,7 @@ const Form = () => {
     const handlePost = async (data: any) => {
         console.log(id);
        try {
-        const response = await axios.post(`http://localhost:3000/api/users/${id}/adress`, {
+        const response = await axios.post(`${BASE_URL}/users/${id}/adress`, {
             bairro: data.bairro,
             complemento: data.complemento,
             rua: data.rua,

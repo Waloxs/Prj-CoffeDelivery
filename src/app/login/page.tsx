@@ -8,6 +8,7 @@ import { useState } from 'react';
 import axios from 'axios'
 import { useRouter } from 'next/navigation';
 import Cadastro from '../../components/Cadastro';
+import BASE_URL from '@/api/server';
 
 
 export default function Page() {
@@ -31,7 +32,7 @@ export default function Page() {
 
     const onSubmit = async (data: any) => {
         try {
-            const response = await axios.post<Login>('http://localhost:3000/api/login', {
+            const response = await axios.post<Login>(`${BASE_URL}/login`, {
                 email: data.email,
                 password: data.senha
             });

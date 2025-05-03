@@ -5,6 +5,12 @@ import routes from '../api/routes/users'
 
 dotenv.config();
 
+// src/api.js
+const BASE_URL = "https://prj-coffedelivery.onrender.com/api";
+
+export default BASE_URL;
+
+
 const app = express();
 
 app.use(cors());
