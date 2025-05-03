@@ -1,7 +1,7 @@
 'use client'
 
 import { useForm } from 'react-hook-form';
-import { baloo } from '../fonts/fonts';
+import { baloo } from '@/app/fonts/fonts';
 import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 import { useState } from 'react';
@@ -51,14 +51,15 @@ export const Page = () => {
     return (
         <div className="flex w-full justify-center h-[100vh] items-center">
           <div className='flex w-[90%] h-[80%] justify-center'>
-            <div className="flex bg-[#8663C9] rounded-xl w-full">
+            <div className="flex bg-[#8663C9] rounded-xl w-full max-[1000px]:hidden">
                 <div className='flex items-center pl-[5rem]'>
                     <span className={`${baloo.className} text-white text-5xl font-bold`}>Crie sua Conta!</span>
                 </div>
             </div>
 
-            <div className='flex flex-col w-[40%]'>
-                <span className={`${baloo.className} p-5 text-3xl font-semibold`}>Cadastro</span>
+            <div className='flex flex-col w-[40%] max-[1000px]:bg-[#8663C9] max-[1000px]:h-[max-content]
+             max-[1000px]:rounded-xl max-[850px]:w-[60%] max-[560px]:w-[80%] max-[400px]:w-[100%]'>
+                <span className={`${baloo.className} p-5 text-3xl font-semibold max-[1000px]:text-white`}>Cadastro</span>
                 <form className='flex flex-col gap-7 h-[100%] p-5' onSubmit={handleSubmit(onSubmit)}>
                     <div className='flex flex-col gap-5'>
                             <input 
@@ -102,7 +103,8 @@ export const Page = () => {
 
                     <button
                         type="submit"
-                        className="bg-[#8663C9] w-full text-white p-4 text-center rounded-md hover:opacity-90 transition"
+                        className="bg-[#8663C9] w-full text-white p-4 text-center rounded-md hover:opacity-90 transition 
+                        max-[1000px]:bg-[#fff] max-[1000px]:text-[#8663C9]"
                     >
                         CRIAR
                     </button>

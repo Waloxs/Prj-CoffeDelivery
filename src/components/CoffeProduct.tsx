@@ -65,7 +65,9 @@ const CoffeProduct = () => {
       
   
     return (
-        <div className="flex pl-[150px] pr-[150px] justify-between mt-[2rem] flex-wrap gap-y-[4rem]">
+        <div className="grid grid-cols-4 gap-[4rem] px-[150px] mt-[2rem] max-[1400px]:grid-cols-2 
+        max-[850px]:grid-cols-1 max-[850px]:mt-[5rem]
+        max-[570px]:px-[100px] max-[450px]:px-[50px]">
             {CoffeList.map(item => (
                 <div key={item.id} className="flex items-center flex-col bg-[#F3F2F2] p-2 gap-4 rounded-tr-[3rem] rounded-br-[0.5rem] rounded-tl-[0.5rem] rounded-bl-[3rem] relative">
                     <img src={item.img} alt="" className="absolute w-[6rem] top-[-2rem]" />
@@ -73,7 +75,7 @@ const CoffeProduct = () => {
                    
                     <div className="flex flex-col items-center">
                         <span className={`${baloo.className} text-[1.25rem] font-semibold`}>{item.title}</span>
-                        <span className="text-[#8D8686] max-w-[29ch] text-center">{item.subTitle}</span>
+                        <span className="text-[#8D8686] max-w-[29ch] text-center max-[570px]:text-sm">{item.subTitle}</span>
                     </div>
 
                     <div className="flex items-center justify-between w-full p-4">
