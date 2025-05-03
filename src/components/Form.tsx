@@ -3,7 +3,7 @@
 import { baloo } from "@/app/fonts/fonts";
 import mapYellow from '@/assets/map_yellow.png';
 import dollar from '@/assets/dollar.png';
-import { FieldValues, SubmitHandler, useForm, useWatch } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import dinheiro from '@/assets/dinheiro.png'
 import debito from '@/assets/debito.png'
 import credito from '@/assets/credito.png'
