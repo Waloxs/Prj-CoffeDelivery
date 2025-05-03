@@ -53,7 +53,7 @@ export const Page = () => {
           <div className='flex w-[90%] h-[80%] justify-center'>
             <div className="flex bg-[#8663C9] rounded-xl w-full max-[1000px]:hidden">
                 <div className='flex items-center pl-[5rem]'>
-                    <span className={`${baloo.className} text-white text-5xl font-bold`}>Crie sua Conta!</span>
+                    <span className={`${baloo.className} text-white text-5xl font-bold`}>Crie sua Conta!!!</span>
                 </div>
             </div>
 
