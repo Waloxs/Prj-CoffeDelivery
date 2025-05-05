@@ -85,12 +85,24 @@ const Form = () => {
                                 className="p-3 rounded-md bg-[#EDEDED] text-[#8D8686] border w-full"
                             />
 
+                            <input 
+                                    {...register('numero')}
+                                    placeholder="Numero"
+                                    className="p-3 rounded-md bg-[#EDEDED] text-[#8D8686] border hidden max-[433px]:flex"
+                                />
+
+                            <input 
+                                    {...register('complemento')}
+                                    placeholder="Complemento"
+                                    className="p-3 rounded-md bg-[#EDEDED] text-[#8D8686] border hidden max-[433px]:flex"
+                                />
+
                             <div className="flex gap-3 w-full">
                               <div className="flex flex-col gap-3 w-full">
                                 <input 
                                     {...register('numero')}
                                     placeholder="Numero"
-                                    className="p-3 rounded-md bg-[#EDEDED] text-[#8D8686] border"
+                                    className="p-3 rounded-md bg-[#EDEDED] text-[#8D8686] border max-[433px]:hidden"
                                 />
 
                               </div>
@@ -99,7 +111,7 @@ const Form = () => {
                                 <input 
                                     {...register('complemento')}
                                     placeholder="Complemento"
-                                    className="p-3 rounded-md bg-[#EDEDED] text-[#8D8686] border w-full"
+                                    className="p-3 rounded-md bg-[#EDEDED] text-[#8D8686] border w-full max-[433px]:hidden"
                                 />
 
                                
@@ -111,7 +123,7 @@ const Form = () => {
                                 placeholder="Bairro"
                                 className="p-3 rounded-md bg-[#EDEDED] text-[#8D8686] border w-full"
                             />
-                            
+
                                 <div className="flex gap-3 w-full">
                                     <input 
                                         {...register('cidade')}

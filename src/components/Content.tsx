@@ -84,7 +84,7 @@ const Content = ({ handleSubmit }: any ) => {
                                         </div>
                                       </div>
                                 </div>
-                                <span className={`${roboto.className} text-lg font-medium`}>R$ {(Number(item.price.replace(',','.')) * count[index]).toFixed(2)} </span>
+                                <span className={`${roboto.className} text-lg font-medium max-[393px]:text-sm max-[380px]:hidden`}>R$ {(Number(item.price.replace(',','.')) * count[index]).toFixed(2)} </span>
                             </div> 
                           </div>
                         )}

@@ -11,7 +11,7 @@ import ilustracion from '@/assets/Illustration.png'
 const ConfirmContent = () => {
 
     return (
-        <div className="flex pl-[140px] pr-[140px] mt-[4rem] w-full justify-between">
+        <div className="flex pl-[140px] pr-[140px] mt-[4rem] w-full justify-between max-[700px]:px-[40px]">
             <div className="flex flex-col gap-[3rem]">
                 <div className="flex flex-col">
                     <span className={`${baloo.className} text-[#C47F17] text-3xl font-bold`}>Uhu! Pedido confirmado</span>
@@ -44,7 +44,7 @@ const ConfirmContent = () => {
                 </div>
             </div>
 
-            <img src={ilustracion.src} alt="" />
+            <img src={ilustracion.src} alt="" className="max-[1155px]:hidden"/>
 
         </div>
     )
