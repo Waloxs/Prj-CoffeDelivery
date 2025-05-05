@@ -48,16 +48,17 @@ export const Page = () => {
     }
 
     return (
-        <div className="flex w-full justify-center h-[100vh] items-center">
-          <div className='flex w-[90%] h-[80%] justify-center'>
+        <div className="flex w-full justify-center h-[100vh] items-center max-[440px]:w-full">
+          <div className='flex w-[90%] h-[80%] justify-center max-[440px]:w-full'>
             <div className="flex bg-[#8663C9] rounded-xl w-full max-[1000px]:hidden">
                 <div className='flex items-center pl-[5rem]'>
                     <span className={`${baloo.className} text-white text-5xl font-bold`}>Crie sua Conta!</span>
                 </div>
             </div>
 
-            <div className='flex flex-col w-[40%] max-[1000px]:bg-[#8663C9] max-[1000px]:h-[max-content]
-             max-[1000px]:rounded-xl max-[850px]:w-[60%] max-[560px]:w-[80%] max-[400px]:w-[100%]'>
+            <div className='flex flex-col w-[40%] max-[1000px]:bg-[#8663C9] 
+            max-[1000px]:rounded-xl max-[850px]:w-[60%] max-[700px]:w-[80%] 
+            max-[550px]:w-[100%] max-[1000px]:w-[60%]'>
                 <span className={`${baloo.className} p-5 text-3xl font-semibold max-[1000px]:text-white`}>Cadastro</span>
                 <form className='flex flex-col gap-7 h-[100%] p-5' onSubmit={handleSubmit(onSubmit)}>
                     <div className='flex flex-col gap-5'>

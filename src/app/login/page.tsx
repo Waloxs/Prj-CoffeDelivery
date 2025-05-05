@@ -64,7 +64,8 @@ export default function Page() {
             </div>
         
             <div className='flex flex-col w-[40%] max-[1000px]:bg-[#8663C9] 
-            max-[1000px]:rounded-xl max-[850px]:w-[60%] max-[560px]:w-[80%] max-[400px]:w-[100%]'>
+            max-[1000px]:rounded-xl max-[850px]:w-[60%] max-[700px]:w-[80%] 
+            max-[500px]:w-[100%] max-[1000px]:w-[60%]'>
                 <span className={`${baloo.className} p-5 text-3xl font-semibold max-[1000px]:text-white`}>Login</span>
                 <form className='flex flex-col gap-[3rem] h-[100%] p-5' onSubmit={handleSubmit(onSubmit)}>
                     <div className='flex flex-col gap-5'>
@@ -111,6 +112,7 @@ export default function Page() {
                 className={`
                     flex w-[90%] justify-center absolute
                     transition-transform duration-[1500ms] ease-in-out
+                    max-[440px]:w-[100vw]
                     ${animation ? 'translate-x-0' : 'translate-x-[100vw]'}
                 `}
             >
