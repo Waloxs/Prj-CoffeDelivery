@@ -93,20 +93,25 @@ const Form = () => {
                                     className="p-3 rounded-md bg-[#EDEDED] text-[#8D8686] border"
                                 />
 
-                                <input 
-                                    {...register('bairro')}
-                                    placeholder="Bairro"
-                                    className="p-3 rounded-md bg-[#EDEDED] text-[#8D8686] border"
-                                />
                               </div>
 
-                              <div className="flex flex-col gap-3 w-full">
+                              <div className="flex flex-col gap-3 w-full ">
                                 <input 
                                     {...register('complemento')}
                                     placeholder="Complemento"
                                     className="p-3 rounded-md bg-[#EDEDED] text-[#8D8686] border w-full"
                                 />
 
+                               
+                              </div>
+                            </div>
+
+                            <input 
+                                {...register('bairro')}
+                                placeholder="Bairro"
+                                className="p-3 rounded-md bg-[#EDEDED] text-[#8D8686] border w-full"
+                            />
+                            
                                 <div className="flex gap-3 w-full">
                                     <input 
                                         {...register('cidade')}
@@ -120,8 +125,6 @@ const Form = () => {
                                         className="p-3 rounded-md bg-[#EDEDED] text-[#8D8686] border w-[50px]"
                                     /> 
                                 </div>
-                              </div>
-                            </div>
                         </form>
                     </div>
             </div>
