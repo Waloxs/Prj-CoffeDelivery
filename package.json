@@ -50,7 +50,6 @@
   
 
   "prisma": {
-    "schema": "api/src/schema.prisma"
   }
 
 
