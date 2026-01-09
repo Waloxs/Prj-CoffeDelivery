@@ -10,56 +10,58 @@ const JWT_SECRET = process.env.JWT_SECRET as string;
 const prisma = new PrismaClient();
 
 export const createUser = async (req: Request, res: Response): Promise<Response> => {
-    const {
+  const { name, email, password, lastName, telefone } = req.body;
+
+  try {
+    if (!name || !email || !password || !lastName || !telefone) {
+      return res.status(400).json({ error: 'Campos ausentes' });
+    }
+
+    const hashed = await bcrypt.hash(password, 10);
+
+    const existingUser = await prisma.user.findUnique({
+      where: { email },
+    });
+
+    if (existingUser) {
+      return res.status(400).json({ message: 'E-mail já cadastrado.' });
+    }
+
+    const user = await prisma.user.create({
+      data: {
         name,
         email,
-        password,
-        lastName,   
+        password: hashed,
+        lastName,
         telefone,
-    } = req.body;
+      },
+    });
 
-    console.log(req.body);
+    const token = jwt.sign(
+      { userId: user.id },
+      JWT_SECRET,
+      { expiresIn: '1d' }
+    );
 
-    try {
-        if (!name || !email || !password || !lastName || !telefone) {
-            return res.status(400).json({ error: 'Campos ausentes' });
-        }
+    return res.status(201).json({ user, token });
 
-        const hashed = await bcrypt.hash(password, 10);
+  } catch (error: any) {
+    console.log("====== PRISMA ERROR ======");
+    console.error(error);
+    console.log("MESSAGE:", error.message);
+    console.log("CODE:", error.code);
+    console.log("META:", error.meta);
+    console.log("=========================");
 
-        const existingUser = await prisma.user.findUnique({
-            where: { email },
-          });
-          
-          if (existingUser) {
-            return res.status(400).json({ message: 'E-mail já cadastrado.' });
-          }
-          
-
-        const user = await prisma.user.create({
-            data: {
-                name,
-                email,
-                password: hashed,
-                lastName,
-                telefone,
-            }
-        });
-
-
-        const token = jwt.sign(
-            { userId: user.id },
-            JWT_SECRET,
-            { expiresIn: '1d' }
-        );
-
-        return res.status(201).json({ user, token });
-
-    } catch (error) {
-        console.error(error);
-        return res.status(400).json({ error: 'Erro ao criar usuário' });
-    }
+    return res.status(500).json({
+      error: "Erro ao criar usuário",
+      message: error.message,
+      code: error.code,
+      meta: error.meta,
+    });
+  }
 };
+
 
 
 export const addAddressToUser = async (req: Request, res: Response): Promise<Response> => {
