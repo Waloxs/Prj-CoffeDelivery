@@ -14,7 +14,7 @@
     "module": "CommonJS",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "paths": {
       "@/*": [
@@ -33,7 +33,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/api/server.ts"
+    "src/api/server.ts",
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
