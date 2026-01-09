@@ -1,8 +1,8 @@
-import { Prisma, PrismaClient } from "@prisma/client";
+import dotenv from 'dotenv';
+import { PrismaClient } from "@prisma/client";
 import { Request, Response } from "express";
 import bcrypt from 'bcryptjs';
 import jwt from "jsonwebtoken";
-import dotenv from 'dotenv';
 dotenv.config();
 
 const JWT_SECRET = process.env.JWT_SECRET as string;
@@ -14,7 +14,7 @@ export const createUser = async (req: Request, res: Response): Promise<Response>
         name,
         email,
         password,
-        lastName,
+        lastName,   
         telefone,
     } = req.body;
 

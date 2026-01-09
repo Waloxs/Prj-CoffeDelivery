@@ -10,7 +10,7 @@
     "server": "ts-node src/api/server.ts"
   },
   "dependencies": {
-    "@prisma/client": "^6.6.0",
+    "@prisma/client": "^5.22.0",
     "axios": "^1.8.4",
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
@@ -19,6 +19,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.15.0",
     "next": "15.3.0",
+    "prisma": "^5.22.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.55.0",
@@ -47,10 +48,5 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
-  
-
-  "prisma": {
-  }
-
-
+  "prisma": {}
 }
