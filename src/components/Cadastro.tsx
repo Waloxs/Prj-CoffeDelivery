@@ -36,7 +36,7 @@ const onSubmit = async (data: any) => {
     console.log(data)
   try {
     const response = await axios.post<CreateUserResponse>(
-      'localhost/api/users',
+      'https://prj-coffedelivery.onrender.com/api/users',
       {
         email: data.email,
         password: data.senha,
