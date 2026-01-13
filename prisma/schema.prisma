@@ -14,18 +14,20 @@ model User {
   password  String
   lastName  String
   telefone  String
-  addressId String?  @unique  // A chave estrangeira para o Address
-  address   Address? @relation(fields: [addressId], references: [id]) // Relacionamento com Address
+
+  addressId String?
+  address   Address? @relation(fields: [addressId], references: [id])
 }
 
 model Address {
-  id         String   @id @default(auto()) @map("_id") @db.ObjectId
-  bairro     String
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  bairro      String
   complemento String
-  rua        String
-  cep        String
-  cidade     String
-  uf         String
-  numero     Int
-  user       User?    
+  rua         String
+  cep         String
+  cidade      String
+  uf          String
+  numero      Int
+
+  users User[]  
 }
